@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Avatar extends StatelessWidget {
@@ -23,7 +25,7 @@ class Avatar extends StatelessWidget {
             ),
             child: icon is IconData ? Icon(icon) : CircleAvatar(backgroundImage: AssetImage(icon as String), radius: 30,),
           ),
-          const SizedBox(height: 4,),
+         const SizedBox(height: kIsWeb ? 0 : 4),
           Text(name,
               style: GoogleFonts.poppins(
                 fontSize: 14,

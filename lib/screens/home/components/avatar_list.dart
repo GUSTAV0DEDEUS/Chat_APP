@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_app/screens/gallery/gallery.dart';
 import 'package:my_app/screens/home/components/avatar.dart';
 import 'package:my_app/models/person.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 
 class AvatarList extends StatelessWidget {
   final List<Person> persons;

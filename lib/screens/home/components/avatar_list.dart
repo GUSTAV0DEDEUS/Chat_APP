@@ -12,7 +12,6 @@ class AvatarList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
-      controller: kIsWeb ? ScrollController() : null,
       itemCount: persons.length,
       itemBuilder: (_, index) {
         final person = persons[index];

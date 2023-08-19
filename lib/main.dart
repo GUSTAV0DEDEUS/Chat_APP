@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Chat',
       theme: ThemeData(
+        fontFamily: 'Poppins',
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue)
             .copyWith(background: Colors.grey[100], primary: Colors.white),
@@ -23,4 +24,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

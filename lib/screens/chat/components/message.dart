@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app/models/person.dart';
+import 'package:my_app/utils/font.dart';
 
 class MessageText extends StatelessWidget {
   const MessageText({
@@ -31,10 +31,7 @@ class MessageText extends StatelessWidget {
           ),
           child: Text(
             person.lastMessage,
-            style: GoogleFonts.poppins(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: Colors.white),
+            style: font(Colors.white, FontWeight.w500).bodyMedium,
           ),
         ),
         const SizedBox(
@@ -53,8 +50,10 @@ class MessageText extends StatelessWidget {
             ),
             Text(
               '9:30 AM',
-              style: GoogleFonts.poppins(
-                  fontSize: 14, color: Colors.grey),
+              style: font(
+                Colors.grey[400],
+                FontWeight.w400,
+              ).bodyMedium,
             )
           ],
         )
@@ -62,4 +61,3 @@ class MessageText extends StatelessWidget {
     );
   }
 }
-

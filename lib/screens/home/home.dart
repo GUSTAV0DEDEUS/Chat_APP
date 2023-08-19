@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app/components/bottom_Bar.dart';
 import 'package:my_app/components/button.dart';
 import 'package:my_app/data/DUMMY_DATA.dart';
 import 'package:my_app/screens/home/components/avatar_list.dart';
 import 'package:my_app/screens/home/components/message_list.dart';
+import 'package:my_app/utils/font.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -31,10 +31,7 @@ class Home extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Chats',
-                        style: GoogleFonts.poppins(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
-                        )),
+                        style: font(Colors.black,FontWeight.w700).headlineMedium),
                     const Button(),
                   ],
                 ),
@@ -47,7 +44,7 @@ class Home extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: 80, child: AvatarList(persons: persons)),
+                      SizedBox(height: 84, child: AvatarList(persons: persons)),
                     ],
                   ),
                 ),
@@ -62,4 +59,7 @@ class Home extends StatelessWidget {
         ),
         bottomNavigationBar: const BottomBar());
   }
+
+
+
 }

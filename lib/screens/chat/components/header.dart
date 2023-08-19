@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/models/person.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:my_app/utils/font.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -27,17 +27,11 @@ class Header extends StatelessWidget {
               children: [
                 Text(
                   person.name,
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: font(Colors.black, FontWeight.w600).titleSmall,
                 ),
                 Text(
                   'Online',
-                  style: GoogleFonts.poppins(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.greenAccent),
+                  style: font(Colors.greenAccent, FontWeight.w500).bodySmall,
                   overflow: TextOverflow.ellipsis,
                 )
               ],
@@ -47,4 +41,5 @@ class Header extends StatelessWidget {
       ),
     );
   }
+  
 }

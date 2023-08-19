@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app/data/DUMMY_DATA.dart';
 import 'package:my_app/models/person.dart';
+import 'package:my_app/utils/font.dart';
 
 class ListContact extends StatelessWidget {
   const ListContact({
@@ -26,10 +26,7 @@ class ListContact extends StatelessWidget {
                 ? ListTile(
                     leading: Text(
                       alphabet[index],
-                      style: GoogleFonts.poppins(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: font().headlineLarge,
                       textAlign: TextAlign.left,
                     ),
                     minLeadingWidth: 40,
@@ -51,10 +48,7 @@ class ListContact extends StatelessWidget {
                               ),
                               Text(
                                 items[index].name,
-                                style: GoogleFonts.poppins(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: font(Colors.black, FontWeight.w500).titleMedium,
                                 overflow: TextOverflow.ellipsis,
                               )
                             ],

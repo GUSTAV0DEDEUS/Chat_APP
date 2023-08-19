@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:my_app/utils/font.dart';
 
 class Avatar extends StatelessWidget {
   final String name;
@@ -18,18 +18,27 @@ class Avatar extends StatelessWidget {
             height: 60,
             width: 60,
             decoration: BoxDecoration(
-              border: Border.all(color: icon is IconData ? Colors.transparent : const Color.fromRGBO(3, 169, 244, .2), width: 2),
+              border: Border.all(
+                  color: icon is IconData
+                      ? Colors.transparent
+                      : const Color.fromRGBO(3, 169, 244, .2),
+                  width: 2),
               shape: BoxShape.circle,
               color: icon is IconData ? Colors.grey[200] : Colors.transparent,
             ),
-            child: icon is IconData ? Icon(icon) : CircleAvatar(backgroundImage: AssetImage(icon as String), radius: 30,),
+            child: icon is IconData
+                ? Icon(icon)
+                : CircleAvatar(
+                    backgroundImage: AssetImage(icon as String),
+                    radius: 30,
+                  ),
           ),
-         const SizedBox(height: kIsWeb ? 0 : 4),
-          Text(name,
-              style: GoogleFonts.poppins(
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ), overflow: TextOverflow.ellipsis,),
+          const SizedBox(height: kIsWeb ? 0 : 4),
+          Text(
+            name,
+            style: font().titleSmall,
+            overflow: TextOverflow.ellipsis,
+          ),
         ],
       ),
     );

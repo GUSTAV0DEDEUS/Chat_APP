@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'package:my_app/utils/font.dart';
 
 class InputMessage extends StatelessWidget {
   const InputMessage({
@@ -69,10 +70,7 @@ class InputMessage extends StatelessWidget {
                         ),
                         Text(
                           'Hello world 🚀',
-                          style: GoogleFonts.poppins(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.grey),
+                          style: font(Colors.grey,FontWeight.w500).bodyMedium,
                           overflow: TextOverflow.ellipsis,
                         )
                       ],
@@ -86,4 +84,5 @@ class InputMessage extends StatelessWidget {
       ],
     );
   }
+ 
 }

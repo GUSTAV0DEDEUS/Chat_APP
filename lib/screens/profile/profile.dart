@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:my_app/screens/profile/components/infos.dart';
+import 'package:my_app/screens/profile/components/perfil.dart';
+import 'package:my_app/screens/profile/components/social_media.dart';
+import 'package:my_app/utils/font.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -16,76 +18,11 @@ class Profile extends StatelessWidget {
           children: [
             Expanded(
               flex: 2,
-              child: Container(
-                margin: EdgeInsets.only(top: height * .1),
-                alignment: Alignment.topCenter,
-                child: Stack(
-                  alignment: Alignment.topCenter,
-                  clipBehavior: Clip.none,
-                  children: [
-                    Container(
-                      width: width,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
-                        color: Colors.white,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 50.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text('Gustavo de Deus Conceição',
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w600)),
-                                const SizedBox(height: 2),
-                                Text('1431432312013',
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400)),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      top: -40,
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/avatar.jpg'),
-                        radius: 50,
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              child: Perfil(height: height, width: width),
             ),
             Expanded(
               flex: 4,
-              child: Container(
-                margin: const EdgeInsets.only(top: 12),
-                width: width,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                  color: Colors.white,
-                ),
-                child: Center(
-                  child: Container(
-                      width: width * .8,
-                      decoration: const BoxDecoration(
-                        borderRadius:
-                            BorderRadiusDirectional.all(Radius.circular(15)),
-                        color: Colors.white70,
-                      ),
-                      child: Text(
-                        '🌟 Explorando o mundo com olhos curiosos 🌍✨\n📸 Capturando momentos e compartilhando histórias 📷📖\n🎓 TI\n📍 Itapevi/SP\n🌱 Aprendendo, crescendo e sempre sorrindo!\n💌 Contato: gdedeus60@gmail.com\n#Viagens #Fotografia #Aventuras',
-                        style: GoogleFonts.poppins(fontSize: 16, height: 1.7),
-                      )),
-                ),
-              ),
+              child: Infos(width: width),
             ),
             Expanded(
               flex: 1,
@@ -97,37 +34,7 @@ class Profile extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(15)),
                   color: Colors.white,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    linkedMedia('assets/images/icon1.png',
-                        'https://github.com/GUSTAV0DEDEUS', Colors.black),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    linkedMedia(
-                        'assets/images/icon2.png',
-                        'https://www.linkedin.com/in/gustavo-de-deus-conceicao',
-                        Colors.blueAccent),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    linkedMedia('assets/images/icon3.png',
-                        'https://www.youtube.com/@deCode001', Colors.red),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    linkedMedia(
-                        'assets/images/icon4.png',
-                        'https://www.instagram.com/decode0001/',
-                        Colors.pinkAccent),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    linkedMedia('assets/images/icon5.png',
-                        'https://twitter.com/deCode0001', Colors.blue),
-                  ],
-                ),
+                child: const SocialMedia(),
               ),
             )
           ],
@@ -135,22 +42,6 @@ class Profile extends StatelessWidget {
       ),
     );
   }
-
-  Widget linkedMedia(String image, String url, Color color) {
-    return InkWell(
-      onTap: () {
-        launchUrlString(url);
-      },
-      child: Container(
-        alignment: Alignment.center,
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          color: color,
-        ),
-        child: Image.asset(image, width: 25, height: 25),
-      ),
-    );
-  }
 }
+
+

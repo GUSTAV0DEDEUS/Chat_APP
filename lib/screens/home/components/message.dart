@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:my_app/utils/font.dart';
 
 class Message extends StatelessWidget {
   final bool state;
@@ -61,13 +61,11 @@ class Message extends StatelessWidget {
                     children: [
                       Text(
                         userName,
-                        style: GoogleFonts.poppins(
-                            fontSize: 16, fontWeight: FontWeight.w700,), overflow: TextOverflow.ellipsis,
+                        style:  font(Colors.black, FontWeight.w700).titleSmall, overflow: TextOverflow.ellipsis,
                       ),
                       Text(
                         lastMessage,
-                        style: GoogleFonts.poppins(
-                            fontSize: 12, fontWeight: FontWeight.w400),
+                        style:  font(Colors.black, FontWeight.w400).bodySmall,
                         overflow: TextOverflow.ellipsis,
                       )
                     ],
@@ -93,13 +91,9 @@ class Message extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 number.toString(),
-                                style: GoogleFonts.roboto(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white),
-                              ),
+                                style: font(Colors.white,FontWeight.w700).labelSmall,
                             ),
-                          ),
+                              )      ),
                   ],
                 ),
               ],
@@ -109,4 +103,6 @@ class Message extends StatelessWidget {
       ),
     );
   }
+
+  
 }

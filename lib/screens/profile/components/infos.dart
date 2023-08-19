@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:my_app/utils/font.dart';
 
 class Infos extends StatelessWidget {
   const Infos({
     super.key,
     required this.width,
+    
   });
 
   final double width;

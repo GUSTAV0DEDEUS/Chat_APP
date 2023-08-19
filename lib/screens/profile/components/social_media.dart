@@ -36,8 +36,7 @@ class SocialMedia extends StatelessWidget {
       ],
     );
   }
-
-  Widget linkedMedia(String image, String url, Color color) {
+   Widget linkedMedia(String image, String url, Color color) {
     return InkWell(
       onTap: () {
         launchUrlString(url);

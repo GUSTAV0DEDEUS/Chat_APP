@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/models/person.dart';
+import 'package:my_app/screens/profile/profile.dart';
 import 'package:my_app/utils/font.dart';
 
 class Header extends StatelessWidget {
@@ -13,6 +14,15 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: () {
+        Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Profile(),
+                settings: RouteSettings(arguments: person),
+              ),
+            );
+      },
       child: Row(
         children: [
           CircleAvatar(

@@ -6,10 +6,16 @@ class Perfil extends StatelessWidget {
     super.key,
     required this.height,
     required this.width,
+    required this.name,
+    required this.number,
+    required this.image,
   });
 
   final double height;
   final double width;
+  final String name;
+  final String number;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +40,11 @@ class Perfil extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text('Gustavo de Deus Conceição',
+                      Text(name,
                           style:
                               font(Colors.black, FontWeight.w700).titleMedium),
                       const SizedBox(height: 2),
-                      Text('1431432312013',
+                      Text(number,
                           style: font(Colors.black, FontWeight.w400).bodySmall),
                     ],
                   ),
@@ -46,10 +52,10 @@ class Perfil extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
+           Positioned(
             top: -40,
             child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/avatar.jpg'),
+              backgroundImage: AssetImage(image),
               radius: 50,
             ),
           )
